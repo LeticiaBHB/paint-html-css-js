@@ -1,0 +1,296 @@
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    overflow: hidden;
+    background: #62325f98;
+
+}
+
+canvas {
+    position: absolute;
+    box-shadow: -3px 2px 9 px 6px rgb(206, 96, 160);
+    cursor: crosshair;
+    left: 90px;
+    background: rgb(255, 255, 255);
+}
+
+.tools {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 100%;
+    left: 0;
+    background:#62325f98;
+    justify-content: left;
+    flex-direction: row;
+}
+
+.tools .color-field {
+    position: relative;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid rgb(221, 221, 221);
+    margin: 0 10px;
+}
+
+#text_cap {
+    position: absolute;
+    left: 5px;
+    bottom: 210px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+#fundo_cap {
+    display: none;
+}
+
+#linha {
+    position: absolute;
+    background: rgba(248, 129, 129, 0.933);
+    width: 20px;
+    height: 20px;
+    bottom: 180px;
+    left: 25px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+#linha div {
+    position: absolute;
+    top: -5px;
+    width: 70px;
+    height: 30px;
+    left: 45px;
+    background: #62325f98;
+    border-radius: 13px;
+}
+
+#linha #d1 {
+    position: absolute;
+    background: rgb(16, 16, 16);
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+#linha #d2 {
+    position: absolute;
+    background: black;
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    left: 40px;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+#paleta {
+    position: absolute;
+    top: 550px;
+    padding: 5px;
+    left: 55px;
+    z-index: 2;
+    background:#62325f98;
+    border-radius: 100%;
+    display: none;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#paleta div {
+    position: relative;
+    padding: 3px;
+    float: left;
+    border: 1px solid rgba(240, 172, 255, 0.27);
+    cursor: pointer;
+}
+
+#icons {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 50px;
+}
+
+#icons img {
+    position: relative;
+    padding: 3px 10px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+#brush {
+    border: 2px solid rgba(217, 57, 209, 0.182);
+    filter: invert();
+    border-radius: 13px;
+    background: cadetblue;
+}
+
+#cor_atual {
+    position: absolute;
+    bottom: 120px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    background: #f88181ee;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+#text_tamh {
+    position: absolute;
+    left: 3px;
+    top: 369px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#tamh {
+    position: absolute;
+    left: 13px;
+    top: 387px;
+    width: 45px;
+    height: 45px;
+    border-radius: 40px;
+    background: #f88181ee;
+    cursor: pointer;
+}
+
+#tamanhos {
+    position: absolute;
+    top: -90px;
+    left: 80px;
+    background: aliceblue;
+    width: 250px;
+    height: 300px;
+    border: 2px solid rgb(0, 0, 0);
+    display: none;
+}
+
+#tamh #tamanhos div {
+    position: relative;
+    top: 10px;
+    margin: 5px 10px;
+    left: 5px;
+    width: 15%;
+    height: 15%;
+    float: left;
+    border: 2px solid none;
+}
+
+#tamh #tamanhos div div {
+    position: relative;
+    margin: auto;
+    width: 10%;
+    height: 10%;
+    background: black;
+    border-radius: 40px;
+}
+
+.tools .button {
+    width: 70px;
+    height: 40px;
+    border: 2px solid #5c3939c7;;
+    cursor: pointer;
+    color: #5c3939;
+    background:   #f8818179;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+#desfazer {
+    position: absolute;
+    bottom: 10px;
+    left: -10px;
+}
+
+#apagar {
+    position: absolute;
+    bottom: 60px;
+    left: -10px;
+}
+
+.color-picker {
+    position: absolute;
+    bottom: 1px;
+    right: -5px;
+    margin: 0 10px;
+    height: 25px;
+    cursor: pointer;
+}
+
+#text_range {
+    position: absolute;
+    right: 70px;
+    bottom: 5px;
+}
+
+.pen-range {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+#menu {
+    position: absolute;
+    top: 3px;
+    left: 90px;
+    color: #5c3939c7;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: medium;
+    cursor: pointer;
+}
+
+#opc {
+    position: absolute;
+    top: 25px;
+    padding: 10px 20px;
+    left: 90px;
+    background: rgb(236, 235, 235);
+    width: 150px;
+    height: 120px;
+    z-index: 1;
+    display: none;
+}
+
+#opc input[type='text'] {
+    position: absolute;
+    left: 7px;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+}
+
+#opc select {
+    position: absolute;
+    top: 70px;
+    left: 60px;
+}
+
+#opc span {
+    position: absolute;
+    left: 30px;
+    top: 40px;
+}
+
+#opc #btn_save {
+    position: absolute;
+    bottom: 7px;
+    left: 10px;
+    width: 90%;
+    cursor: pointer;
+}
+

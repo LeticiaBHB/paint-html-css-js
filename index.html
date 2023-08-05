@@ -1,0 +1,93 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAINT!</title>
+    <link href='style.css' type='text/css' rel='stylesheet' />
+</head>
+<body>
+    <div id='menu'>
+        <a onclick='opc()' title='Opções'>Salvar como</a>
+    </div>
+    <div id='opc'>
+        <input type='text' name='nome' id='nome' value='' placeholder="Digite o nome para o arquivo!"><
+        </p>&nbsp;
+        <span>Escolha o formato:</span>
+        <select id='formatos' name='formatos' value=''>
+    <option value='PNG'>PNG</option>
+   <option value='WEBP'>WEBP</option>
+</select>
+        <button onclick='salvar()' id='btn_save'>Baixar:.</button>
+    </div>
+    <div class='field'>
+        <canvas id='canvas'></canvas>
+        <div class='tools'>
+            <button onclick='undo()' class='button' id='desfazer'>Desfazer</button>
+            <button onclick='clear_canvas()' class='button' id='apagar'>Apagar</button>
+            <span id='text_tamh'>Tamanho</span>
+            <div id='tamh' onclick='exibTam()'>
+                <div id='tamanhos'>
+                    <div id='back' onclick="width('2')" title='2px'>
+                        <div onclick="width('2')" style='width:2px; height:2px; ' title='2px'></div>
+                    </div>
+                    <div id='back' onclick="width('4')" title='4px'>
+                        <div onclick="width('4')" style='width:4px; height:4px; ' title='4px'></div>
+                    </div>
+                    <div id='back' onclick="width('6')" title='6px'>
+                        <div onclick="width('6')" style='width:6px; height:6px; ' title='6px'></div>
+                    </div>
+                    <div id='back' onclick="width('8')" title='8px'>
+                        <div onclick="width('8')" style='width:7px; height:7px; ' title='8px'></div>
+                    </div>
+                    <div id='back' onclick="width('10')" title='10px'>
+                        <div onclick="width('10')" style='width:8px; height:8px; ' title='10px'></div>
+                    </div>
+                    <div id='back' onclick="width('15')" title='15px'>
+                        <div onclick="width('15')" style='width:9px; height:9px; ' title='15px'></div>
+                    </div>
+                    <div id='back' onclick="width('20')" title='20'>
+                        <div onclick="width('20')" style='width:10px; height:10px; ' title='20px'></div>
+                    </div>
+                    <div id='back' onclick="width('30')" title='30px'>
+                        <div onclick="width('30')" style='width:15px; height:15px; ' title='30px'></div>
+                    </div>
+                    <div id='back' onclick="width('45')" title='45px'>
+                        <div onclick="width('45')" style='width:20px; height:20px; ' title='45px'></div>
+                    </div>
+                    <div id='back' onclick="width('55')" title='55px'>
+                        <div onclick="width('55')" style='width:25px; height:25px; ' title='55px'></div>
+                    </div>
+                    <div id='back' onclick="width('75')" title='75px'>
+                        <div onclick="width('75')" style='width:30px; height:30px; ' title='75px'></div>
+                    </div>
+                    <div id='back' onclick="width('83')" title='83px'>
+                        <div onclick="width('83')" style='width:35px; height:35px; ' title='83px'></div>
+                    </div>
+                    <input onInput='draw_width = this.value' type="range" min='1' max='150' value='2' class="pen-range" id='pen_range'></input><span id='text_range'>2px</span>
+                </div>
+            </div>
+            <div id='icons'>
+                <img src='icons/brush.png' width='50' height='50' title='Pincél' id='brush' onclick='tools("brush")' />
+                <img src='icons/erase.png' width='50' height='50' title='Borracha' id='borracha' onclick='tools("borracha")' />
+                <img src='icons/line.png' width='50' height='50' title='Linha' id='lin' onclick='tools("lin")' />
+                <img src='icons/quadrado.png' width='50' height='50' title='Retângulo' id='retangulo' onclick='tools("retangulo")' />
+                <img src='icons/circulo.png' width='50' height='50' title='Circulo' id='circulo' onclick='tools("circulo")' />
+                <img src='icons/triangulo.png' width='50' height='50' title='Triângulo' id='triangulo' onclick='tools("triangulo")' />
+            </div>
+            <span id='text_cap'>Tipo de linha</span>
+            <div id='linha' onclick='linecap_exib()'>
+                <div id='fundo_cap'>
+                    <div id='d1' title='Tipo de linha: Redonda!' onclick='linecap("round")'></div>
+                    <div id='d2' title='Tipo de linha: quadrada!' onclick='lenecap("square")'></div>
+                </div>
+            </div>
+            <div id='cor_atual' onclick='paleta()'></div>
+        </div>
+    </div>
+    <div id='paleta'>
+        <input onInput="draw_color = this.value; document.getElementById('cor_atual').style.background = draw_color;" type="color" class='color-picker'>
+    </div>
+    <script type='text/javascript' src='app.js'></script>
+</body>
+</html>
